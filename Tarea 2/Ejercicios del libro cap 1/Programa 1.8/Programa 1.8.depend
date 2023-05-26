@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1685050081 source:c:\programación\programación para mecatrónicos\ppm\tarea 2\ejemplos libro programación\programa 1.8\main.c
+	<stdio.h>
+	<math.h>
+

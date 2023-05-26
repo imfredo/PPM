@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1685056113 source:c:\programación\programación para mecatrónicos\ppm\hola mundo\raiz\main.c
+	<stdio.h>
+	<stdlib.h>
+
