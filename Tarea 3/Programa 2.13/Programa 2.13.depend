@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1685652586 source:c:\programación\programación para mecatrónicos\ppm\tarea 3\programa 2.13\main.c
+	<stdio.h>
+	<math.h>
+
