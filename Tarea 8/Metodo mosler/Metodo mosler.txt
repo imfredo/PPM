@@ -1,0 +1,38 @@
+MÉTODO MOSLER para la gestión de riesgos
+
+//Fases
+Fase 1. DEFINICION DEL RIESGO
+Fase 2. ANALISIS DEL RIESGO
+Fase 3. EVALUACIÓN DEL RIESGO
+Fase 4. CALCULO Y CLASIFICACION DEL RIESGO
+
+//Fase 1. DEFINICIÓN DEL RIESGO
+Riesgo: Activo/Bien y Daño
+
+//Fase 2. ANALISIS DEL RIESGO
+6 Criterios:
+-Criterio#1: Valorar las consecuencias negativas o daños.
+ Función "F"
+
+-Criterio#2: Valorar si los bienes pueden ser sustituidos o reemplazados.
+ Sustitución "S"
+
+-Criterio#3: Valorar la perturbación y efectos psicológicos que producirá.
+ Profundidad "P"
+
+-Criterio#4: Alcance de los daños.
+ Extensión "E"
+
+-Criterio#5: Probabilidad que el riesgo se manifieste o materialice.
+ Agresión "A"
+
+-Criterio#6: Probabilidad que se produzca pérdidas o daños.
+ Vulnerabilidad "V"
+
+//Fase 3. EVALUACIÓN DEL RIESGO
+-Carácter del riesgo "C"
+-Probabilidad del Riesgo "Pb"
+-Cuantificación del Riesgo "ER"
+
+
+
