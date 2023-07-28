@@ -1,0 +1,7 @@
+C:\Programación\Programación para Mecatrónicos\PPM\Tarea 9\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Programación\Programación para Mecatrónicos\PPM\Tarea 9\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Programación\Programación para Mecatrónicos\PPM\Tarea 9\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Programación\Programación para Mecatrónicos\PPM\Tarea 9\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.AssemblyReference.cache
+C:\Programación\Programación para Mecatrónicos\PPM\Tarea 9\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Programación\Programación para Mecatrónicos\PPM\Tarea 9\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Programación\Programación para Mecatrónicos\PPM\Tarea 9\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

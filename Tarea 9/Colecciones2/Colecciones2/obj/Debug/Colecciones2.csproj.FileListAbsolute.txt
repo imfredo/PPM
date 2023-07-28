@@ -1,0 +1,7 @@
+C:\Programación\Programación para Mecatrónicos\PPM\Tarea 9\Colecciones2\Colecciones2\bin\Debug\Colecciones2.exe.config
+C:\Programación\Programación para Mecatrónicos\PPM\Tarea 9\Colecciones2\Colecciones2\bin\Debug\Colecciones2.exe
+C:\Programación\Programación para Mecatrónicos\PPM\Tarea 9\Colecciones2\Colecciones2\bin\Debug\Colecciones2.pdb
+C:\Programación\Programación para Mecatrónicos\PPM\Tarea 9\Colecciones2\Colecciones2\obj\Debug\Colecciones2.csproj.AssemblyReference.cache
+C:\Programación\Programación para Mecatrónicos\PPM\Tarea 9\Colecciones2\Colecciones2\obj\Debug\Colecciones2.csproj.CoreCompileInputs.cache
+C:\Programación\Programación para Mecatrónicos\PPM\Tarea 9\Colecciones2\Colecciones2\obj\Debug\Colecciones2.exe
+C:\Programación\Programación para Mecatrónicos\PPM\Tarea 9\Colecciones2\Colecciones2\obj\Debug\Colecciones2.pdb
