@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Risxpert
 {
-  
+
     public partial class Form_Risxpert : Form
     {
 
@@ -24,14 +24,11 @@ namespace Risxpert
         private string activo;
         private string tipo;
         private string analista;
-        private string daño;
+        private string daño;*/
+        
+        
 
 
-        */
-
-        List<Riesgo> Riesgos = new List<Riesgo>();
-        int n = 0;
-        int r = 0;
 
         //Riesgo = new Riesgo(int n);
        
@@ -70,10 +67,13 @@ namespace Risxpert
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            for (int n = 0; n += Riesgos; n++)
+            dataGridView2.Rows.Add(dataGridView1);
+            dataGridView2.Rows.Add(dataGridView2);
+
+            /*  for (int n = 0; n = Riesgos; n++)
             {
-                dataGridView2 = dataGridView1.Rows.CollectionChanged += dataGridView1_CellContentClick;
-            }
+                dataGridView2 = dataGridView1.Rows.cell[0];
+            }*/
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -83,7 +83,14 @@ namespace Risxpert
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           /* for (n = 0; n < Riesgo.Count; n++)
+
+            List<Riesgo> Riesgos = new List<Riesgo>();
+
+            Riesgos.Add(new Riesgo(dataGridView1));
+
+            //dataGridView1.ToString.Text.Rows.Add();
+
+            /* for (n = 0; n < Riesgo.Count; n++)
                 // No hay necesidad de type cast
                 r = Riesgos[n];
             Console.Writeline(r);
@@ -92,6 +99,10 @@ namespace Risxpert
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            int n = dataGridView1.Rows.Add();
+
+            dataGridView1.Rows[n].Cells[0].Value = dataGridView1.Rows;
+
             Riesgo R1 = new Riesgo();
             {
 
@@ -118,6 +129,8 @@ namespace Risxpert
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            btnGuardar = dataGridView1.Rows[1];
+
             for (n = 0;  n < Riesgos.Count; n++)
             {
                 Riesgo r = Riesgos[n];
