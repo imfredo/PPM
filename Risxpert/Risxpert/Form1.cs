@@ -22,6 +22,8 @@ namespace Risxpert
     public partial class Form_Risxpert : Form
     {
         List<Riesgo> Riesgos = new List<Riesgo>();
+          
+        
 
 
         int CELL_DANO = 0;
@@ -35,12 +37,7 @@ namespace Risxpert
 
         List<Riesgo2> Riesgos2 = new List<Riesgo2>();
 
-        public int F { get; set; }
-        public int S { get; set; }
-        public int P { get; set; }
-        public int E { get; set; }
-        public int A { get; set; }
-        public int V { get; set; }
+        
 
 
 
@@ -279,7 +276,6 @@ namespace Risxpert
 
                 MessageBox.Show("Datos guardados en la base de datos.");
             }
-
         }
 
 
@@ -302,24 +298,12 @@ namespace Risxpert
 
         }
 
-        private void btnMas_Click(object sender, EventArgs e)
-        {
-            Riesgo newRiesgo = new Riesgo();
-            Riesgos.Add(newRiesgo);
 
-            int n = dataGridView1.Rows.Add();
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = Riesgos;
-
-
-            dataGridView1.CurrentCell = dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0];
-
-
-        }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Riesgo r1 = new Riesgo();
+
             r1.Id = Int32.Parse(txtId.Text);
             r1.Activo = txtActivo.Text;
             r1.Nombre = txtNombre.Text;
@@ -423,9 +407,7 @@ namespace Risxpert
             {
                 var r1 = dataGridView6.Rows[i];
 
-                r1.Cells[CELL_ID].Value = txtId.Text;
                 r1.Cells[CELL_NAME].Value = txtNombre.Text;
-                
 
             }
         }
@@ -544,7 +526,7 @@ namespace Risxpert
             // Definir las columnas del DataGridView6 si aún no están definidas
             if (dataGridView6.Columns.Count == 0)
             {
-                dataGridView6.Columns.Add("ID", "ID");
+                //dataGridView6.Columns.Add("ID", "ID");
                 dataGridView6.Columns.Add("NOMBRE", "NOMBRE");
                 dataGridView6.Columns.Add("CR", "CR");
                 dataGridView6.Columns.Add("MITIGACION", "MITIGACION");
@@ -562,22 +544,13 @@ namespace Risxpert
                     if (int.TryParse(row.Cells["ER"].Value?.ToString(), out ER) &&
                         int.TryParse(row.Cells["PB"].Value?.ToString(), out PB))
                     {
-                        int CR = ER * PB;
+                        int CR = ER;
 
-                        // Obtener el Nombre del DataGridView1
-
-                        string ID = dataGridView1.Rows[row.Index].Cells[CELL_ID].Value.ToString();
-                        //string ID;
-
-
-                        string NOMBRE = dataGridView1.Rows[row.Index].Cells[CELL_NAME].Value.ToString();
-
-
-
-                        // Agregar los valores al DataGridView6
-                        dataGridView6.Rows.Add(ID, NOMBRE, CR, mitigacionCounter);
-
+                        //Riesgos[0].Nombre = dataGridView1.Rows[row.Index].Cells[2].Value?.ToString();
+                        
+                        dataGridView6.Rows.Add(Riesgos[0].Nombre, CR, mitigacionCounter);
                         mitigacionCounter++;
+
                     }
                     else
                     {
@@ -585,6 +558,40 @@ namespace Risxpert
                     }
                 }
             }
+        }
+
+        private void AsignarDatosDB ()
+        {
+            Base_Datos BD = new Base_Datos();
+
+            List<Base_Datos> list = new List<Base_Datos>();
+
+            for(int i = 0;i < dataGridView1.Rows.Count;i++) 
+            { 
+                BD.Activo = dataGridView1.Rows[i].Cells[CELL_ACTIVO].Value.ToString();
+                BD.Nombre = dataGridView1.Rows[i].Cells[CELL_NAME].Value.ToString();
+                BD.Tipo = dataGridView1.Rows[i].Cells[CELL_TIPO].Value.ToString();
+                BD.Daño = dataGridView1.Rows[i].Cells[CELL_DANO].Value.ToString();
+                BD.Analista = dataGridView1.Rows[i].Cells[CELL_ANALISTA].Value.ToString();
+                BD.Fecha = dataGridView1.Rows[i].Cells[CELL_FECHA].Value.ToString();
+                BD.CR = Convert.ToInt16(dataGridView6.Rows[i].Cells[1].Value);
+                BD.Mitigacion = Convert.ToInt16(dataGridView6.Rows[i].Cells[2].Value);
+                Console.WriteLine(BD.Activo);
+                Console.WriteLine(BD.Nombre);
+                Console.WriteLine(BD.Mitigacion);
+                list.Add(BD);
+
+            }
+            using (var db = new LiteDatabase(@"C:\Programación\Programación para Mecatrónicos\PPM\Risxpert\Data Base Lite DB Risxpert\Risxpert.db"))
+            {
+                var datosCollection = db.GetCollection<Base_Datos>("Test");
+
+                //datosCollection.DeleteAll();
+                datosCollection.InsertBulk(list);
+
+
+            }
+            MessageBox.Show("Datos guardados en la base de datos.");
         }
 
 
@@ -600,6 +607,7 @@ namespace Risxpert
             public string Daño { get; set; }
             public string Analista { get; set; }
             public string Fecha { get; set; }
+            //public string CR { get;set } 
             //public bool Estado { get; set;}
 
 
@@ -626,6 +634,22 @@ namespace Risxpert
 
         }
 
-        
+        public class Base_Datos
+        {
+            public int Id { get; set; }
+            public string Activo { get; set; }
+            public string Nombre { get; set; }
+            public string Tipo { get; set; }
+            public string Daño { get; set; }
+            public string Analista { get; set; }
+            public string Fecha { get; set; }
+            public int CR { get; set; }
+            public int Mitigacion { get; set; }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            AsignarDatosDB();   
+        }
     }
 }

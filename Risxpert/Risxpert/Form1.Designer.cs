@@ -55,7 +55,6 @@ namespace Risxpert
             this.DANO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ANALISTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnAgregar2 = new System.Windows.Forms.Button();
@@ -106,6 +105,7 @@ namespace Risxpert
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -138,7 +138,6 @@ namespace Risxpert
             this.tabPage4.Controls.Add(this.txtAnalista);
             this.tabPage4.Controls.Add(this.lblAnalista);
             this.tabPage4.Controls.Add(this.dataGridView1);
-            this.tabPage4.Controls.Add(this.btnGuardar);
             this.tabPage4.Location = new System.Drawing.Point(4, 54);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -295,7 +294,6 @@ namespace Risxpert
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1087, 184);
             this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.AllowUserToAddRowsChanged += new System.EventHandler(this.btnMas_Click);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
@@ -343,20 +341,6 @@ namespace Risxpert
             this.Fecha.HeaderText = "FECHA";
             this.Fecha.Name = "Fecha";
             this.Fecha.Visible = false;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.Lime;
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnGuardar.FlatAppearance.BorderSize = 10;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnGuardar.Location = new System.Drawing.Point(28, 345);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(109, 33);
-            this.btnGuardar.TabIndex = 1;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // tabControl1
             // 
@@ -770,6 +754,7 @@ namespace Risxpert
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btnGuardar);
             this.tabPage3.Controls.Add(this.dataGridView6);
             this.tabPage3.Location = new System.Drawing.Point(4, 54);
             this.tabPage3.Name = "tabPage3";
@@ -781,6 +766,7 @@ namespace Risxpert
             // 
             // dataGridView6
             // 
+            this.dataGridView6.AllowUserToAddRows = false;
             this.dataGridView6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView6.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -789,6 +775,7 @@ namespace Risxpert
             this.dataGridView6.Name = "dataGridView6";
             this.dataGridView6.Size = new System.Drawing.Size(1189, 211);
             this.dataGridView6.TabIndex = 26;
+            this.dataGridView6.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
             // label1
             // 
@@ -799,6 +786,16 @@ namespace Risxpert
             this.label1.Size = new System.Drawing.Size(533, 108);
             this.label1.TabIndex = 10;
             this.label1.Text = "RISXPERT";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(56, 130);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(103, 37);
+            this.btnGuardar.TabIndex = 27;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // Form_Risxpert
             // 
@@ -842,7 +839,6 @@ namespace Risxpert
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.TextBox txtAnalista;
         private System.Windows.Forms.Label lblAnalista;
-        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblActivo;
         private System.Windows.Forms.Label lblDaño;
@@ -908,6 +904,7 @@ namespace Risxpert
         private System.Windows.Forms.DataGridView dataGridView6;
         private System.Windows.Forms.TextBox txtF;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnGuardar;
 
         public EventHandler txtFecha_TextChanged { get; private set; }
         public EventHandler btnAgregar2_Click_1 { get; private set; }
